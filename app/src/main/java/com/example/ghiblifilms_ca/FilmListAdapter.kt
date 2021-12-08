@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ghiblifilms_ca.data.GhibliEntity
 import com.example.ghiblifilms_ca.databinding.ListItemBinding
 
-class FilmListAdapter(private val filmsList: List<GhibliEntity>) :
+class FilmListAdapter(private val filmsList: List<GhibliEntity>,
+    private val listener: ListItemListener) :
 
     RecyclerView.Adapter<FilmListAdapter.ViewHolder>() {
 
@@ -30,6 +31,13 @@ class FilmListAdapter(private val filmsList: List<GhibliEntity>) :
         val film = filmsList[position]
         with(holder.binding) {
             filmName.text = film.title
+            root.setOnClickListener {
+                listener.onItemClick(film)
+            }
         }
+    }
+
+    interface ListItemListener {
+        fun onItemClick(film: GhibliEntity)
     }
 }

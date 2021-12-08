@@ -7,11 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.ghiblifilms_ca.data.GhibliEntity
 import com.example.ghiblifilms_ca.databinding.MainFragmentBinding
 
-class mainFragment : Fragment() {
+class mainFragment : Fragment(),
+    FilmListAdapter.ListItemListener {
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: MainFragmentBinding
@@ -34,8 +37,9 @@ class mainFragment : Fragment() {
         }
 
         viewModel.filmsList.observe(viewLifecycleOwner, Observer {
-            adapter = FilmListAdapter(it)
+            adapter = FilmListAdapter(it, this@mainFragment)
             binding.recyclerView.adapter = adapter
+            binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         })
         return binding.root
         return inflater.inflate(R.layout.main_fragment, container, false)
@@ -45,6 +49,11 @@ class mainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
+    }
+
+    override fun onItemClick(film: GhibliEntity) {
+        val action = mainFragmentDirections.actionMainFragmentToEditorFragment(film)
+        findNavController().navigate(action)
     }
 
 }
