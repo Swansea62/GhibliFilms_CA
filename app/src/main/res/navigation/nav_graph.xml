@@ -18,5 +18,9 @@
         android:id="@+id/editorFragment"
         android:name="com.example.ghiblifilms_ca.editorFragment"
         android:label="editor_fragment"
-        tools:layout="@layout/editor_fragment" />
+        tools:layout="@layout/editor_fragment" >
+        <argument
+            android:name="GhibliArgs"
+            app:argType="com.example.ghiblifilms_ca.data.GhibliEntity" />
+    </fragment>
 </navigation>
