@@ -9,5 +9,14 @@
         android:id="@+id/mainFragment"
         android:name="com.example.ghiblifilms_ca.mainFragment"
         android:label="main_fragment"
-        tools:layout="@layout/main_fragment" />
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_editorFragment"
+            app:destination="@id/editorFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editorFragment"
+        android:name="com.example.ghiblifilms_ca.editorFragment"
+        android:label="editor_fragment"
+        tools:layout="@layout/editor_fragment" />
 </navigation>

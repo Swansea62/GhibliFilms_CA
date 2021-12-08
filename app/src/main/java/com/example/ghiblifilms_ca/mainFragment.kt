@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ghiblifilms_ca.databinding.MainFragmentBinding
@@ -31,6 +32,12 @@ class mainFragment : Fragment() {
             )
             addItemDecoration(divider)
         }
+
+        viewModel.filmsList.observe(viewLifecycleOwner, Observer {
+            adapter = FilmListAdapter(it)
+            binding.recyclerView.adapter = adapter
+        })
+        return binding.root
         return inflater.inflate(R.layout.main_fragment, container, false)
     }
 
