@@ -36,7 +36,7 @@ class mainFragment : Fragment(),
             addItemDecoration(divider)
         }
 
-        viewModel.filmsList.observe(viewLifecycleOwner, Observer {
+        viewModel.films.observe(viewLifecycleOwner, Observer {
             adapter = FilmListAdapter(it, this@mainFragment)
             binding.recyclerView.adapter = adapter
             binding.recyclerView.layoutManager = LinearLayoutManager(activity)

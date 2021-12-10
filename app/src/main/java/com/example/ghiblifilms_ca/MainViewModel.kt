@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ghiblifilms_ca.data.GhibliEntity
+import com.example.ghiblifilms_ca.dataaccess.RetrofitInstance
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
@@ -29,7 +30,7 @@ class MainViewModel : ViewModel() {
     private fun getFilms() {
         viewModelScope.launch {
             _isLoading.value = true
-            val fetchedFilms = retrofitInstance.api.getFilms()
+            val fetchedFilms = RetrofitInstance.api.getFilms()
             Log.i(TAG, "List of films : $fetchedFilms")
             _films.value = fetchedFilms
             _isLoading.value = false
