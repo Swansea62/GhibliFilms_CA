@@ -6,6 +6,6 @@ import retrofit2.http.GET
 
 interface GhibliApi {
 
-    @GET("GhibliFilms.json")
+    @GET("films")
     suspend fun getFilms() : List<GhibliEntity>
 }

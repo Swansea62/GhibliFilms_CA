@@ -15,7 +15,6 @@ class MainViewModel : ViewModel() {
     private val _films: MutableLiveData<List<GhibliEntity>> = MutableLiveData()
 
     val films: LiveData<List<GhibliEntity>>
-
         get() = _films
 
     private val _isLoading = MutableLiveData(false)
