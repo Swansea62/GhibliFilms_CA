@@ -17,7 +17,7 @@ data class GhibliEntity(
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        TODO("description"),
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
@@ -29,6 +29,7 @@ data class GhibliEntity(
         parcel.writeString(title)
         parcel.writeString(original_title)
         parcel.writeString(original_title_romanised)
+        parcel.writeString(description)
         parcel.writeString(director)
         parcel.writeString(producer)
         parcel.writeString(release_date)
