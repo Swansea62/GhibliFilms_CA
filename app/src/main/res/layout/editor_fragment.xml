@@ -145,7 +145,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
 
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="448dp"
         android:hint=""
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -169,11 +169,11 @@
 
     <TextView
         android:id="@+id/producer"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="147dp"
+        android:layout_height="30dp"
 
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="488dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="484dp"
         android:hint=""
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toEndOf="@+id/producerHeading"
@@ -199,7 +199,7 @@
         android:layout_width="144dp"
         android:layout_height="29dp"
 
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="528dp"
         android:hint=""
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -214,7 +214,7 @@
         android:layout_height="32dp"
 
         android:layout_marginStart="20dp"
-        android:layout_marginTop="572dp"
+        android:layout_marginTop="568dp"
         android:fontFamily="sans-serif-black"
         android:text="Running Time : "
         android:textSize="20sp"
@@ -227,7 +227,7 @@
         android:layout_height="28dp"
 
         android:layout_marginStart="20dp"
-        android:layout_marginTop="572dp"
+        android:layout_marginTop="568dp"
         android:hint=""
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toEndOf="@+id/runningTimeHeading"
