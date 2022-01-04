@@ -32,8 +32,39 @@ class editorFragment : Fragment() {
         setHasOptionsMenu(true)
 
         binding = EditorFragmentBinding.inflate(inflater, container, false)
+        binding.title.setText(args.ghibliArgs.title)
+        binding.ogTitle.setText(args.ghibliArgs.original_title)
+        binding.romTitle.setText(args.ghibliArgs.original_title_romanised)
+        binding.description.setText(args.ghibliArgs.description)
+        binding.director.setText(args.ghibliArgs.director)
+        binding.producer.setText(args.ghibliArgs.producer)
+        binding.releaseDate.setText(args.ghibliArgs.release_date)
+        binding.runningTime.setText(args.ghibliArgs.running_time)
+
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true){
+                override fun handleOnBackPressed(){
+                    // you write the code for saveAndReturn - later this will need to save to the Database
+                    saveAndReturn()
+                }
+            }
+        )
 
         return binding.root
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            // When the home button is clicked, save changes then return to the MainFragment, which is the List
+            android.R.id.home -> saveAndReturn()
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun saveAndReturn() : Boolean{
+        findNavController().navigateUp()
+        return true
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

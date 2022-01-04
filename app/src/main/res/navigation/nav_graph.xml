@@ -6,6 +6,15 @@
     app:startDestination="@id/mainFragment">
 
     <fragment
+        android:id="@+id/editorFragment"
+        android:name="com.example.ghiblifilms_ca.editorFragment"
+        android:label="editor_fragment"
+        tools:layout="@layout/editor_fragment" >
+        <argument
+            android:name="ghibliArgs"
+            app:argType="com.example.ghiblifilms_ca.data.GhibliEntity" />
+    </fragment>
+    <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.ghiblifilms_ca.mainFragment"
         android:label="main_fragment"
@@ -13,14 +22,5 @@
         <action
             android:id="@+id/action_mainFragment_to_editorFragment"
             app:destination="@id/editorFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/editorFragment"
-        android:name="com.example.ghiblifilms_ca.editorFragment"
-        android:label="editor_fragment"
-        tools:layout="@layout/editor_fragment" >
-        <argument
-            android:name="GhibliArgs"
-            app:argType="com.example.ghiblifilms_ca.data.GhibliEntity" />
     </fragment>
 </navigation>
