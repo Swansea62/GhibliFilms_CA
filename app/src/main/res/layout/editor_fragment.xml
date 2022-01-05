@@ -8,7 +8,6 @@
     tools:context=".editorFragment">
 
     <!-- Title Layout -->
-
     <TextView
         android:id="@+id/titleHeading"
         android:layout_width="118dp"
@@ -35,11 +34,9 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="Autofill,MissingConstraints"
         tools:text="Film title in here" />
-
     <!-- -->
 
     <!-- Original Title Layout -->
-
     <TextView
         android:id="@+id/ogTitleHeading"
         android:layout_width="134dp"
@@ -66,9 +63,9 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="Autofill,MissingConstraints"
         tools:text="Original film title in here" />
-
     <!-- -->
 
+    <!-- Romanized Title Layout -->
     <TextView
         android:id="@+id/romTitleHeading"
         android:layout_width="150dp"
@@ -95,7 +92,9 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="Autofill,MissingConstraints"
         tools:text="Original film title romanized in here" />
+    <!-- -->
 
+    <!-- Description Layout -->
     <TextView
         android:id="@+id/descHeading"
         android:layout_width="wrap_content"
@@ -126,7 +125,9 @@
         app:layout_constraintTop_toBottomOf="@id/descHeading"
         tools:ignore="Autofill,MissingConstraints"
         tools:text="Description in here" />
+    <!-- -->
 
+    <!-- Director Layout -->
     <TextView
         android:id="@+id/directorHeading"
         android:layout_width="150dp"
@@ -153,7 +154,9 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="Autofill,MissingConstraints"
         tools:text="Director in here" />
+    <!-- -->
 
+    <!-- Producer Layout -->
     <TextView
         android:id="@+id/producerHeading"
         android:layout_width="150dp"
@@ -180,7 +183,9 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="Autofill,MissingConstraints"
         tools:text="Producer in here" />
+    <!-- -->
 
+    <!-- Release Date Layout -->
     <TextView
         android:id="@+id/releaseDateHeading"
         android:layout_width="150dp"
@@ -207,7 +212,9 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="Autofill,MissingConstraints"
         tools:text="Release date in here" />
+    <!-- -->
 
+    <!-- Running Time Layout -->
     <TextView
         android:id="@+id/runningTimeHeading"
         android:layout_width="147dp"
