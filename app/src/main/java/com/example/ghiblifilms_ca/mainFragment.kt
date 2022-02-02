@@ -37,7 +37,7 @@ class mainFragment : Fragment(),
         }
 
         viewModel.films.observe(viewLifecycleOwner, Observer {
-            adapter = FilmListAdapter(it, this@mainFragment)
+            adapter = FilmListAdapter(requireContext(), it, this@mainFragment)
             binding.recyclerView.adapter = adapter
             binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         })

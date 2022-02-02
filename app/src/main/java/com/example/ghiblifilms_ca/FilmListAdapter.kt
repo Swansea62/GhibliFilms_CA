@@ -1,13 +1,18 @@
 package com.example.ghiblifilms_ca
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.ghiblifilms_ca.data.GhibliEntity
 import com.example.ghiblifilms_ca.databinding.ListItemBinding
 
-class FilmListAdapter(private val filmsList: List<GhibliEntity>,
+//This is where the data from the Film list is passed.
+class FilmListAdapter(
+    val context: Context,
+    private val filmsList: List<GhibliEntity>,
     private val listener: ListItemListener) :
 
     RecyclerView.Adapter<FilmListAdapter.ViewHolder>() {
@@ -16,6 +21,7 @@ class FilmListAdapter(private val filmsList: List<GhibliEntity>,
 
     inner class ViewHolder(itemView: View) :
             RecyclerView.ViewHolder(itemView) {
+                //this binds to the list_item.xml file
                 val binding = ListItemBinding.bind(itemView)
             }
 
@@ -31,7 +37,11 @@ class FilmListAdapter(private val filmsList: List<GhibliEntity>,
         val film = filmsList[position]
         with(holder.binding) {
             filmName.text = film.title
-            root.setOnClickListener {
+            //Load the image from the web into the filmImage object
+            Glide.with(context)
+                .load(film.image)
+                .into(filmImage)
+            filmImage.setOnClickListener {
                 listener.onItemClick(film)
             }
         }

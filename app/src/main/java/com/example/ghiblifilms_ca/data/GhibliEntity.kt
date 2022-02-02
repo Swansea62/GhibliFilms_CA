@@ -5,6 +5,7 @@ import android.os.Parcelable
 
 data class GhibliEntity(
     var title: String?,
+    var image: String?,
     var original_title: String?,
     var original_title_romanised: String?,
     var description: String?,
@@ -21,12 +22,14 @@ data class GhibliEntity(
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
+        parcel.readString(),
         parcel.readString()
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(title)
+        parcel.writeString(image)
         parcel.writeString(original_title)
         parcel.writeString(original_title_romanised)
         parcel.writeString(description)
